@@ -20,7 +20,7 @@ func getClasses(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	json.NewEncoder(w).Encode(classes)
+	json.NewEncoder(w).Encode(&classes)
 }
 
 func addClass(w http.ResponseWriter, r *http.Request) {
@@ -39,7 +39,7 @@ func addClass(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	w.WriteHeader(http.StatusCreated)
-	json.NewEncoder(w).Encode(class)
+	json.NewEncoder(w).Encode(&class)
 }
 
 func getClass(w http.ResponseWriter, r *http.Request) {
@@ -48,7 +48,7 @@ func getClass(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	json.NewEncoder(w).Encode(class)
+	json.NewEncoder(w).Encode(&class)
 }
 
 func updateClass(w http.ResponseWriter, r *http.Request) {
@@ -71,7 +71,7 @@ func updateClass(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	json.NewEncoder(w).Encode(class)
+	json.NewEncoder(w).Encode(&class)
 }
 func deleteClass(w http.ResponseWriter, r *http.Request) {
 	class, err := db.getClassFromReq(w, r)

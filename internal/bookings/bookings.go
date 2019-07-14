@@ -23,7 +23,7 @@ func getBookings(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	json.NewEncoder(w).Encode(bookings)
+	json.NewEncoder(w).Encode(&bookings)
 }
 
 func checkValidity(booking Booking, class classes.Class) error {
@@ -70,7 +70,7 @@ func addBooking(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	w.WriteHeader(http.StatusCreated)
-	json.NewEncoder(w).Encode(booking)
+	json.NewEncoder(w).Encode(&booking)
 }
 
 func getBooking(w http.ResponseWriter, r *http.Request) {
@@ -79,7 +79,7 @@ func getBooking(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	json.NewEncoder(w).Encode(booking)
+	json.NewEncoder(w).Encode(&booking)
 }
 
 func updateBooking(w http.ResponseWriter, r *http.Request) {
@@ -110,7 +110,7 @@ func updateBooking(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	json.NewEncoder(w).Encode(booking)
+	json.NewEncoder(w).Encode(&booking)
 }
 func deleteBooking(w http.ResponseWriter, r *http.Request) {
 	booking, err := db.getBookingFromReq(w, r)

@@ -50,7 +50,6 @@ func logRequest(next http.Handler) http.Handler {
 func setHeaders(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Add("Content-Type", "application/json")
-		w.Header().Add("X-Server-Language", "go")
 		next.ServeHTTP(w, r)
 	})
 }
