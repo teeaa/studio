@@ -14,7 +14,7 @@ DANCESTUDIO_MYSQLUSER, DANCESTUDIO_MYSQLPASSWORD, DANCESTUDIO_MYSQLPASSWORD, DAN
 
 The MySQL schemas for the two tables are located in `/mysql` in project root. 
 
-Build the REST server by running `go build github.com/teeaa/studio/cmd/server/.` in project root. This will create the executable `./server`.
+Build the REST server by running `go build github.com/teeaa/studio/cmd/server/.` in project root. This will create the executable `./server`. To run that (with env vars) run for example `DANCESTUDIO_MYSQLPORT=13306 ./server`
 
 ### JSON Payloads
 `POST /classes`
